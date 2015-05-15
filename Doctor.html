@@ -1,0 +1,28 @@
+<html>
+<body>
+<h3 class="text-success">Doctors</h3>
+<br>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Staff</th>
+	</tr>
+	<tr ng-repeat ="d in doc">
+		<td>
+			{{d.id}}
+		</td>
+		<td>
+			{{d.firstName}} {{d.lastName}}
+		</td>
+		<td>
+			<ul>
+				<li ng-repeat="h in getHospitalForDoctors(d.id)">
+					{{h.name}}
+				</li>
+			</ul>
+		</td>
+  </tr>
+</table>
+</body>
+</html>
